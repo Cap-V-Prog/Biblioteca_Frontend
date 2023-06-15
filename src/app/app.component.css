@@ -1,0 +1,383 @@
+.super-main {
+  background: url('https://img.freepik.com/premium-vector/abstract-smooth-blur-purple-gradient-background-website-banner-paper-card-decorative-design_120819-485.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 55px); /* Subtract the height of the top bar */
+  overflow: hidden;
+}
+
+  .menu {
+    width: 250px;
+    background-color: rgba(240, 240, 240, 0.25); /* Light gray background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateX(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    overflow: hidden;
+
+  }
+
+.menu.hide-sidebar {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.menu li {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px; /* Increase the margin-bottom to create more space */
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 18px;
+  background-color: rgba(240, 240, 240, 0); /* Light gray transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  color: rgba(255, 255, 255, 0.7); /* Dark gray text color */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  text-align: center; /* Center the content horizontally */
+}
+
+.menu li.active {
+  background-color: rgba(255, 255, 255, 0.7); /* Gray transparent background */
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.menu li:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Gray transparent background */
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  width: 100%;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(240, 240, 240, 0.3) rgba(0, 0, 0, 0.1);
+}
+
+.content::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
+}
+
+.content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Scrollbar track color */
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Scrollbar thumb color */
+  border-radius: 8px; /* Adjust the radius of the scrollbar thumb */
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Scrollbar thumb color on hover */
+}
+
+.container.hide-sidebar .content {
+  margin-left: 0;
+  flex: 1;
+}
+
+.top-bar {
+  height: 35px;
+  background-color: rgba(240, 240, 240, 0.25); /* Light gray background */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  overflow: hidden; /* Hide overflow to prevent the blur effect from spreading */
+  position: relative;
+}
+
+.toggle-sidebar {
+  color: rgba(0, 0, 0, 0.8); /* Dark gray text color */
+  background: none;
+  border: none;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.tab-content {
+  flex: 1;
+  padding-top: 10px;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.tab-content.hidden {
+  opacity: 0;
+}
+
+.toggle-sidebar:focus,
+.toggle-sidebar:hover {
+  outline: none;
+  color: rgba(128, 128, 128, 0.8); /* Medium gray text color */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: rgba(240, 240, 240, 0.6); /* Semi-transparent light gray background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8); /* Dark gray text color */
+}
+
+.search-bar .search-btn {
+  background: none;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.search-bar .search-btn .bi {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8); /* Dark gray icon color */
+}
+
+.top-section {
+  height: 40px;
+  background-color: rgba(240, 240, 240, 0.15); /* Darker grey color with transparency */
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.left-section {
+  flex: 1;
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+.right-section {
+  flex: 2;
+  background-color: rgba(240, 240, 240, 0.15); /* Darker grey color with transparency */
+  border-radius: 10px;
+  padding: 10px;
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.table-container {
+  overflow: hidden; /* Ensure rounded corners are visible */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Add rounded corners to the table container */
+}
+
+.left-section table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.left-section th,
+.left-section td {
+  padding: 10px;
+  height: 40px; /* Adjust the desired height for the table cells */
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+.table-container thead {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.left-section th {
+  background-color: rgba(255, 255, 255, 0.4); /* Light gray background color */
+  color: rgba(0, 0, 0, 0.8); /* Dark gray text color */
+}
+
+.left-section td {
+  color: rgba(0, 0, 0, 0.6); /* Medium gray text color */
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.table-container tr {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.table-container tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.left-section td .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1); /* Light gray background color */
+  color: rgba(0, 0, 0, 0.8); /* Dark gray text color */
+  cursor: pointer;
+}
+
+.btn-group {
+  display: flex;
+  height:100%;
+  width:100%;
+}
+
+.left-section .btn-group-column {
+  flex: 1;
+  display: flex;
+  align-content: center;
+  padding: 0px 2.5px 0px 2.5px;
+  height:100%
+}
+
+.left-section .btn:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark gray background color on hover */
+}
+
+.left-section td input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.container input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow effect on focus */
+}
+
+.select-container {
+  position: relative;
+  height: 100%;
+}
+
+.select-container select {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  appearance: none; /* Remove default arrow on Chrome/Safari */
+  -webkit-appearance: none; /* Remove default arrow on Firefox */
+}
+
+.select-container::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6); /* Medium gray arrow color */
+  pointer-events: none;
+
+}
+
+.select-container select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow effect on focus */
+}
+
+.select-container select option {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.6);
+  padding: 10px; /* Increase the padding to increase the height */
+}
+
+.select-container select option:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.left-section .btn-group-column .btn-edit {
+  background-color: rgba(255, 221, 0, 0.65); /* Red background color */
+  color: rgba(255, 255, 255, 1); /* White text color */
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.left-section .btn-group-column .btn-edit:hover {
+  background-color: rgba(255, 221, 0, 1); /* Updated background color on hover */
+}
+
+.left-section .btn-group-column .btn-danger {
+  background-color: rgba(255, 0, 0, 0.65); /* Red background color */
+  color: rgba(255, 255, 255, 1); /* White text color */
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.left-section .btn-group-column .btn-danger:hover {
+  background-color: rgba(255, 0, 0, 1); /* Updated background color on hover */
+}
+
+.left-section .btn-group-column .btn-add {
+  background-color: rgba(0, 196, 255, 0.65); /* Red background color */
+  color: rgba(255, 255, 255, 1); /* White text color */
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.left-section .btn-group-column .btn-add:hover {
+  background-color: rgb(0, 196, 255); /* Updated background color on hover */
+}
+
+.left-section .btn-group-column .btn-accept {
+  background-color: rgba(72, 255, 0, 0.65); /* Red background color */
+  color: rgba(255, 255, 255, 1); /* White text color */
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.left-section .btn-group-column .btn-accept:hover {
+  background-color: rgb(72, 255, 0); /* Updated background color on hover */
+}
+
+.left-section .btn-group-column .btn-cancel {
+  background-color: rgba(255, 0, 0, 0.65); /* Red background color */
+  color: rgba(255, 255, 255, 1); /* White text color */
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.left-section .btn-group-column .btn-cancel:hover {
+  background-color: rgb(255, 0, 0); /* Updated background color on hover */
+}
+
+.hidden {
+  display: none;
+}
