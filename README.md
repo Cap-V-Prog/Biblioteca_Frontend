@@ -1,14 +1,14 @@
-Angular Reserve Management App
+# Angular Reserve Management App
 The Angular Reserve Management App is a web application designed to help manage reserves, users, and books. It provides an intuitive interface for users to perform various operations related to reserving books and managing user information.
 
-Features
+# Features
 User Management: Allows administrators to manage user accounts, including creating new users, updating existing user information, and deleting user accounts.
 Book Management: Provides functionality to add new books to the system, update book details, and remove books from the inventory.
 Reserve Management: Enables users to search for available books, reserve a book for a specific duration, and view their active reservations.
 Search Functionality: Users can search for books or reserves based on various criteria such as title, author, ISBN, or user details.
 User-Friendly Interface: The app provides a clean and intuitive interface, ensuring ease of use for both administrators and regular users
 
-Technologies Used
+# Technologies Used
 The Angular Reserve Management App is built using the following technologies and frameworks:
 
 Angular: A popular JavaScript framework for building web applications.
